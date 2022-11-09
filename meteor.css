@@ -1,0 +1,141 @@
+/*流星🌠样式*/
+/*设定容器为填充当前浏览器窗口并且清除其它特殊的影响（比如超过当前窗体的高度或宽度）*/
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/*流星区域*/
+.meteor {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  /*因为接下来要在这个div中显示流星，
+          所以需要设置当前div区域为相对定位，
+          与此同时他也是一个母容器*/
+  /*z-index:-1;*/
+}
+/*流星区域下的流星   其实流星就是 一个div中包含层子div  通过改变包含层中div的位置 从而制造出流星的效果*/
+/*第一层div  也是流星的头部*/
+.meteor > div.first {
+  width: 11px;
+  height: 11px;
+  background-color: pink;
+  border-radius: 11px 11px 11px 11px;
+  box-shadow: 0 0 13px pink;
+  /*这里不能使用Css的动画样式了，因为我们要动态的改变流星的位置，如果把位置写死了，那所有的流星都会从一个位置开始，然后所有的轨迹都是一样的 ,那样的话就不美了*/
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  /*第一层的流星默认设定为母容器的最上面和最右边*/
+}
+/*第二层div 也就是流星的脖子*/
+.meteor > div.first > div.second {
+  width: 8px;
+  height: 8px;
+  background-color: pink;
+  border-radius: 8px 8px 8px 8px;
+  box-shadow: 0 0 8px pink;
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  /*第二层的流星默认设定为母容器的 X轴：-3px  Y轴：-3px*/
+}
+/*第三层div 也就是流星的小肚子*/
+.meteor > div.first > div.second > div.third {
+  width: 6px;
+  height: 6px;
+  background-color: pink;
+  border-radius: 6px 6px 6px 6px;
+  box-shadow: 0 0 6px pink;
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  /*第三层的流星默认设定为母容器的 X轴：-6px  Y轴：-6px*/
+}
+/*第四层div 也就是流星的小脚丫*/
+.meteor > div.first > div.second > div.third > div.last {
+  width: 3px;
+  height: 3px;
+  background-color: pink;
+  border-radius: 3px 3px 3px 3px;
+  box-shadow: 0 0 3px pink;
+  position: absolute;
+  top: -9px;
+  right: -9px;
+  /*第四层的流星默认设定为母容器的 X轴：-9px  Y轴：-9px*/
+}
+
+/*其实流星可以动态的设置大小以及长度的    但是我害怕会出现意想不到的差错，所以先就这样了*/
+
+/*以下是流星雨在下落过程中会被放大的动画  CSS3的动画*/
+@keyframes meteorBig {
+  from {
+    transform: scale(0.9, 0.9);
+  }
+
+  to {
+    transform: scale(2, 2);
+  }
+}
+/*兼容Safari和Chrome浏览器*/
+@-webkit-keyframes meteorBig {
+  from {
+    transform: scale(0.9, 0.9);
+  }
+
+  to {
+    transform: scale(2, 2);
+  }
+}
+/*兼容Firefox浏览器*/
+@-moz-keyframes meteorBig {
+  from {
+    transform: scale(0.9, 0.9);
+  }
+
+  to {
+    transform: scale(2, 2);
+  }
+}
+/*兼容Opera浏览器*/
+@-o-keyframes meteorBig {
+  from {
+    transform: scale(0.9, 0.9);
+  }
+
+  to {
+    transform: scale(2, 2);
+  }
+}
+
+/*星星✨背景样式*/
+
+/*body {
+    background: rgba(0, 0, 0, 1);
+}*/
+
+div#starsBackground {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 1);
+  opacity: 1;
+}
+
+div#starsBackground span.star {
+  position: absolute;
+  /*星星本来就是圆的*/
+  border-radius: 100%;
+  /*过渡 所有属性 周期为520s 线性 停顿时间为0s */
+  transition: all 520s linear 0s;
+  /*兼容各种主流浏览器的写法*/
+  -webkit-transition: all 520s linear 0s;
+  -moz-transition: all 520s linear 0s;
+  -o-transition: all 520s linear 0s;
+}

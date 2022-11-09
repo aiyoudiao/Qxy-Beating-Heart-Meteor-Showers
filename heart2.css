@@ -1,13 +1,14 @@
 /*爱心💗样式*/
-.Love {
+.Love2 {
   margin: 140px auto;
   margin-right: 200px;
   width: 300px;
   height: 300px;
   position: absolute;
-  right: -94px;
-  top: -20px;
-  animation-name: beMoved;
+  right: 273px;
+  bottom: 260px;
+  z-index: 99;
+  animation-name: beMoved2;
   animation-delay: 0;
   animation-duration: 0.5s;
   animation-iteration-count: infinite;
@@ -15,21 +16,21 @@
   animation-timing-function: ease;
   /*设置兼容性*/
   /*Safari 和 Chrome*/
-  -webkit-animation-name: beMoved;
+  -webkit-animation-name: beMoved2;
   -webkit-animation-delay: 0;
   -webkit-animation-duration: 0.5s;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-play-state: running;
   -webkit-animation-timing-function: ease;
   /*Firefox*/
-  -moz-animation-name: beMoved;
+  -moz-animation-name: beMoved2;
   -moz-animation-delay: 0;
   -moz-animation-duration: 0.5s;
   -moz-animation-iteration-count: infinite;
   -moz-animation-play-state: running;
   -moz-animation-timing-function: ease;
   /*Opera*/
-  -o-animation-name: beMoved;
+  -o-animation-name: beMoved2;
   -o-animation-delay: 0;
   -o-animation-duration: 0.5s;
   -o-animation-iteration-count: infinite;
@@ -37,13 +38,13 @@
   -o-animation-timing-function: ease;
 }
 
-.Love div {
+.Love2 div {
   width: 100%;
   height: 100%;
   position: absolute;
   background-color: pink;
   /*在相对定位的容器中使用绝对定位 就会将父级容器作为母容器 只会在母容器中而不会以当前窗体的文档中乱跑*/
-  animation-name: light;
+  animation-name: light2;
   animation-delay: 0;
   animation-duration: 0.5s;
   animation-iteration-count: infinite;
@@ -51,21 +52,21 @@
   animation-timing-function: ease;
   /*设置兼容性*/
   /*Safari 和 Chrome*/
-  -webkit-animation-name: light;
+  -webkit-animation-name: light2;
   -webkit-animation-delay: 0;
   -webkit-animation-duration: 0.5s;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-play-state: running;
   -webkit-animation-timing-function: ease;
   /*Firefox*/
-  -moz-animation-name: light;
+  -moz-animation-name: light2;
   -moz-animation-delay: 0;
   -moz-animation-duration: 0.5s;
   -moz-animation-iteration-count: infinite;
   -moz-animation-play-state: running;
   -moz-animation-timing-function: ease;
   /*Opera*/
-  -o-animation-name: light;
+  -o-animation-name: light2;
   -o-animation-delay: 0;
   -o-animation-duration: 0.5s;
   -o-animation-iteration-count: infinite;
@@ -73,8 +74,8 @@
   -o-animation-timing-function: ease;
 }
 
-.loveLeft,
-.loveRight {
+.loveLeft2,
+.loveRight2 {
   /*母容器中的div都是绝对定位的时候 三个div都会重叠在一起*/
   /*设置前两个div的左边和上边的边框 让它变成一个半圆的矩形*/
   /*然后旋转这两个半圆 就能让看到 ♥的上半部分了*/
@@ -86,38 +87,39 @@
   /*这四个值 是按照顺时针来的*/
 }
 
-.loveLeft {
-  /*左边的div X轴平移-50px 然后以中心为轴 旋转-50度 也就是逆时针旋转50度  从右往左旋转*/
-  transform: translate(-50px, 0) rotate(-50deg);
+.loveLeft2 {
+  /*左边的div X轴平移-77px 然后以中心为轴 旋转-77度 也就是逆时针旋转77度  从右往左旋转*/
+  transform: translate(-77px, 0) rotate(-77deg);
   /*设置兼容以下几种主流浏览器的兼容性*/
-  -webkit-transform: translate(-50px, 0) rotate(-50deg);
-  -moz-transformtransform: translate(-50px, 0) rotate(-50deg);
-  -o-transformtransform: translate(-50px, 0) rotate(-50deg);
-  -ms-transform: translate(-50px, 0) rotate(-50deg);
+  -webkit-transform: translate(-77px, 0) rotate(-77deg);
+  -moz-transformtransform: translate(-77px, 0) rotate(-77deg);
+  -o-transformtransform: translate(-77px, 0) rotate(-77deg);
+  -ms-transform: translate(-77px, 0) rotate(-77deg);
 }
 
-.loveRight {
-  /*右边的div X轴平移50px 然后以中心为轴 旋转50度 这是顺势针旋转50度 从左往右转*/
-  transform: translate(50px, 0) rotate(50deg);
+.loveRight2 {
+  /*右边的div X轴平移77px 然后以中心为轴 旋转77度 这是顺势针旋转77度 从左往右转*/
+  transform: translate(77px, 0) rotate(77deg);
   /*设置兼容以下几种主流浏览器的兼容性*/
-  -webkit-transform: translate(50px, 0) rotate(50deg);
-  -moz-transformtransform: translate(50px, 0) rotate(50deg);
-  -o-transformtransform: translate(50px, 0) rotate(50deg);
-  -ms-transform: translate(50px, 0) rotate(50deg);
+  -webkit-transform: translate(77px, 0) rotate(77deg);
+  -moz-transformtransform: translate(77px, 0) rotate(77deg);
+  -o-transformtransform: translate(77px, 0) rotate(77deg);
+  -ms-transform: translate(77px, 0) rotate(77deg);
 }
 
-.loveBottom {
-  /*下边的div Y轴平移55px 然后以中心为轴旋转45度 也就是让这个div 变成一个竖着的菱形 由于 前两个div设置了圆角边框 所以宽度掩盖不了这个竖着的菱形了 于是就缩小为原来的0.9倍*/
-  transform: translate(0, 52px) rotate(45deg) scale(0.9, 0.9);
+.loveBottom2 {
+  /*下边的div Y轴平移55px 然后以中心为轴旋转45度 也就是让这个div 变成一个竖着的菱形 由于 前两个div设置了圆角边框 所以宽度掩盖不了这个竖着的菱形了 于是就缩小为原来的0.896倍*/
+  transform: translate(0, 99.2px) rotate(45deg) scale(0.896, 0.896);
   /*设置兼容以下几种主流浏览器的兼容性 Safari Chrome Firefox IE*/
-  -webkit-transform: translate(0, 52px) rotate(45deg) scale(0.9, 0.9);
-  -moz-transformtransform: translate(0, 52px) rotate(45deg) scale(0.9, 0.9);
-  -o-transformtransform: translate(0, 52px) rotate(45deg) scale(0.9, 0.9);
-  -ms-transform: translate(0, 52px) rotate(45deg) scale(0.9, 0.9);
+  -webkit-transform: translate(0, 99.2px) rotate(45deg) scale(0.896, 0.896);
+  -moz-transformtransform: translate(0, 99.2px) rotate(45deg)
+    scale(0.896, 0.896);
+  -o-transformtransform: translate(0, 99.2px) rotate(45deg) scale(0.896, 0.896);
+  -ms-transform: translate(0, 99.2px) rotate(45deg) scale(0.896, 0.896);
 }
 
 /*星星已经做完了  开始让她扑嗵扑嗵的跳动起来*/
-@keyframes beMoved {
+@keyframes beMoved2 {
   /*从一开始什么样 到后来怎么样*/
   from {
     transform: scale(0.9, 0.9);
@@ -128,7 +130,7 @@
   }
 }
 /*设置兼容不同的浏览器*/
-@-webkit-keyframes beMoved {
+@-webkit-keyframes beMoved2 {
   /*Safari和Chrome*/
   from {
     transform: scale(0.9, 0.9);
@@ -139,7 +141,7 @@
   }
 }
 
-@-moz-keyframes beMoved {
+@-moz-keyframes beMoved2 {
   /*Firefox*/
   from {
     transform: scale(0.9, 0.9);
@@ -150,7 +152,7 @@
   }
 }
 
-@-o-keyframes beMoved {
+@-o-keyframes beMoved2 {
   /*Opera*/
   from {
     transform: scale(0.9, 0.9);
@@ -161,39 +163,39 @@
   }
 }
 
-@keyframes light {
+@keyframes light2 {
   /*让星星发光一下*/
   from {
   }
 
   to {
-    box-shadow: 0px 0px 52px pink;
+    box-shadow: 0px 0px 99.2px pink;
   }
 }
 
-@-webkit-keyframes light {
+@-webkit-keyframes light2 {
   from {
   }
 
   to {
-    box-shadow: 0px 0px 52px pink;
+    box-shadow: 0px 0px 99.2px pink;
   }
 }
 
-@-moz-keyframes light {
+@-moz-keyframes light2 {
   from {
   }
 
   to {
-    box-shadow: 0px 0px 52px pink;
+    box-shadow: 0px 0px 99.2px pink;
   }
 }
 
-@-o-keyframes light {
+@-o-keyframes light2 {
   from {
   }
 
   to {
-    box-shadow: 0px 0px 52px pink;
+    box-shadow: 0px 0px 99.2px pink;
   }
 }

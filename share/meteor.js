@@ -30,7 +30,7 @@ const meteorGenerator = () => {
 
 const meteorShowerGenerator = () => {
   //每次制造流星的个数为随机值 最少为1 最多为5
-  const meteorBead = Math.random() * 4 + 1;
+  const meteorBead = Math.random() * 9 + 1;
   for (let i = 0; i < meteorBead; i++) {
     //获取当前屏幕的高度及宽度或者当前窗体的高度及宽度
     const areaWidth = $(window).width() + 200;
@@ -48,7 +48,9 @@ const meteorShowerGenerator = () => {
     //设置流星的落地之时的Y轴纵向位置范围
     const meteorStop_Y = parseInt(areaHeight + 20, 10);
     //设置每一颗流星从开始到落地整个过程的动画时间
-    const meteorFloatTime = parseInt(areaHeight * Math.random() + areaWidth);
+    const meteorFloatTime = parseInt(
+      areaHeight * 2 * Math.random() + areaWidth * 2
+    );
 
     //在当前流星雨区域添加这颗流星
     $(".meteor").prepend(meteorGenerator());
